@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">NOME</th>
+      <th scope="col">CPF/CNPJ</th>
+      <th scope="col">IE</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <%@pessoas.each do |pessoa|%>
+    <tr>
+      <th scope="row"><%= pessoa.it_no_pessoa%></th>
+      <td><%= pessoa.gr_identificacao%></td>
+      <td><%= pessoa.it_nu_inscricao_estadual%></td>
+    </tr>
+
+    <%end%>
+
+  </tbody>
+</table>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ConsultaNfce</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "//cdn.sefin.ro.gov.br/layout/assets/css/fonts/roboto/roboto.css" %>
+    <%= stylesheet_link_tag "//cdn.sefin.ro.gov.br/layout/assets/css/icons/icomoon/styles.css" %>
+    <%= stylesheet_link_tag "//cdn.sefin.ro.gov.br/layout/assets/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "//cdn.sefin.ro.gov.br/layout/assets/css/core.min.css" %>
+    <%= stylesheet_link_tag "//cdn.sefin.ro.gov.br/layout/assets/css/components.min.css" %>
+    <%= stylesheet_link_tag "//cdn.sefin.ro.gov.br/layout/assets/css/colors.min.css" %>
+    <%= javascript_include_tag "//cdn.sefin.ro.gov.br/layout/assets/js/core/libraries/jquery.min.js" %>
+    <%= javascript_include_tag "//cdn.sefin.ro.gov.br/layout/assets/js/plugins/loaders/pace.min.js" %>
+    <%= javascript_include_tag "//cdn.sefin.ro.gov.br/layout/assets/js/core/libraries/bootstrap.min.js" %>
+    <%= javascript_include_tag "//cdn.sefin.ro.gov.br/layout/assets/js/plugins/loaders/blockui.min.js" %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="navbar-bottom navbar-top">
+    <%= render 'shared/navbar'%>
+    <div class="page-container" style="padding-top: 20px !important">
+      <div class="page-content">
+        <%= render 'shared/sidebar'%>
+        
+
+        <div class="panel panel-flat">
+          <div class="panel-heading">
+            <h5 class="panel-title">
+              <%= yield :titulo %>
+            </h5>
+          </div>
+
+          <div class="panel-body">
+            <%= yield %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <%= render 'shared/footer'%>
+  </body>
+</html>

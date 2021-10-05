@@ -1,0 +1,23 @@
+<div class="navbar navbar-inverse bg-sefin navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/" style="width:auto">
+          <img src="//cdn.sefin.ro.gov.br/layout/assets/images/logo-sefin.svg" alt="DFe Download">
+          <h5>SEFIN/RO - CONSULTAR NOTA FISCAL</h5>
+        </a>
+    </div>
+  <%if @usuario.present?%>
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown dropdown-user">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            <span class="nav_usuario"> <%= @usuario[:nome]%></span>
+            <i class="caret"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="/logout" class="link_logout"><i class="icon-switch2"></i>Sair</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <%end%>
+</div>

@@ -1,0 +1,16 @@
+<% if @error.present?%>
+<div class="alert alert-danger alert-styled-left">
+	<button type="button" class="close" data-dismiss="alert"><span>&times;</span><span class="sr-only">Close</span></button>
+			<%= @error %>
+</div>
+<%end%>
+
+<h1>Documentos#new</h1>
+<p>Find me in app/views/documentos/new.html.erb</p>
+
+
+<form method="post" action="/documentos/create" enctype="multipart/form-data">
+  <input type="text" name="nome"/><br>
+  <input type="file" name="arquivo"/><br>
+  <input type="submit" value="enviar"/>
+</form>
