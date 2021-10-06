@@ -198,6 +198,9 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -245,7 +248,7 @@ DEPENDENCIES
   pagy
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
-  rack-timeout (~> 0.6.0)
+  rack-timeout
   rails (~> 6.1.4, >= 6.1.4.1)
   ransack
   rest-client (~> 2.1)
@@ -254,7 +257,10 @@ DEPENDENCIES
   sass-rails (>= 6)
   sefin-sso!
   selenium-webdriver
+  simple_form
   spring
+  sprockets
+  sprockets-rails
   sqlite3 (~> 1.4)
   tzinfo-data
   web-console (>= 4.1.0)

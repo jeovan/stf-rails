@@ -1,0 +1,31 @@
+<h1>Comandos#index</h1>
+<p>Find me in app/views/comandos/index.html.erb</p>
+
+
+<%= simple_form_for :comando do |f|%>
+  <%= f.input :posto, as: :select, collection: ['305','306'],wrapper_html: { class: 'col-md-4' } %>
+  <%= f.input :comando, :required => false,wrapper_html: { class: 'col-md-4' } %>
+  <%= f.label '.',class: 'col-md-4', style: 'color:transparent', :required => false%>
+  <%= f.button :submit, 'pesquisar',class: 'col-md-4'%>
+<%end%>
+
+
+<%= simple_form_for :motorista do |f|%>
+  <%= f.input :CPF, :required => false,wrapper_html: { class: 'col-md-6' } %>
+  <%= f.input :cnpj_proprietário, :required => false,wrapper_html: { class: 'col-md-6' }  %>
+  <%= f.input :data_de_recepcao, :disabled => true,wrapper_html: { class: 'col-md-4' }  %>
+  <%= f.input :status, :disabled => true,wrapper_html: { class: 'col-md-4' }  %>
+  <%= f.label 's',class: 'col-md-4', style: 'color:transparent', :required => false%>
+  <%= f.button :submit, 'pesquisar motorista',class: 'col-md-4' %>
+<%end%>
+
+<%= simple_form_for :veiculo do |f|%>
+    <%= f.input :placa, :required => false, wrapper_html: { class: 'col-md-6' } %>
+    <%= f.input "marca/modelo", :required => false,wrapper_html: { class: 'col-md-6' } %>
+    <%= f.input :renavam, :required => false,wrapper_html: { class: 'col-md-4' } %>
+    <%= f.input :tara, :required => false,wrapper_html: { class: 'col-md-4' } %>
+    <%= f.label 's',class: 'col-md-4', style: 'color:transparent', :required => false%>
+    <%= f.button :submit, 'pesquisar veiculo',class: 'col-md-4' %>
+  <%end%>
+
+

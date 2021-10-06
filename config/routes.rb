@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comandos/index'
   get 'documentos/index'
   get 'documentos/show'
   get 'documentos/edit'
