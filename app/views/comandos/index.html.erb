@@ -1,31 +1,63 @@
-<h1>Comandos#index</h1>
-<p>Find me in app/views/comandos/index.html.erb</p>
+<% content_for :titulo do %>
+  <h5 class="panel-title  col-md-6" style="padding:0 0 0 10px">
+    <i class="icon-stack"></i>
+    <strong>GERAR COMANDOS</strong>
+  </h5>
+<% end %>
 
-
+<div class="row">
+  <div class="row">
+      <div class="col-md-12" style="padding:20px">
+        <h4 class="decorated"><span>COMANDO</span></h4>
+      </div>
+  </div>
 <%= simple_form_for :comando do |f|%>
-  <%= f.input :posto, as: :select, collection: ['305','306'],wrapper_html: { class: 'col-md-4' } %>
-  <%= f.input :comando, :required => false,wrapper_html: { class: 'col-md-4' } %>
-  <%= f.label '.',class: 'col-md-4', style: 'color:transparent', :required => false%>
-  <%= f.button :submit, 'pesquisar',class: 'col-md-4'%>
+  <%= f.input :posto, as: :select, collection: ['305','306'],wrapper_html: { class: 'col-md-5' } %>
+  <%= f.input :comando, :required => false,wrapper_html: { class: 'col-md-5' } %>
+  <div class="form-group col-md-2">
+  <%= f.label '.',class: 'col-md-12', style: 'color:transparent', :required => false%>
+  <%= f.button :submit, 'pesquisar',class: 'col-md-12 btn-primary'%>
+  </div>
 <%end%>
+</div>
 
 
-<%= simple_form_for :motorista do |f|%>
-  <%= f.input :CPF, :required => false,wrapper_html: { class: 'col-md-6' } %>
+<div class="row">
+  <div class="row">
+      <div class="col-md-12" style="padding:20px">
+        <h4 class="decorated"><span>MOTORISTA</span></h4>
+      </div>
+  </div>
+
+<%= simple_form_for :motorista, :url => '/comandos/motorista', :remote => true do |f|%>
+  <%= f.input :cpf, :required => false,wrapper_html: { class: 'col-md-6' } %>
   <%= f.input :cnpj_proprietário, :required => false,wrapper_html: { class: 'col-md-6' }  %>
   <%= f.input :data_de_recepcao, :disabled => true,wrapper_html: { class: 'col-md-4' }  %>
   <%= f.input :status, :disabled => true,wrapper_html: { class: 'col-md-4' }  %>
-  <%= f.label 's',class: 'col-md-4', style: 'color:transparent', :required => false%>
-  <%= f.button :submit, 'pesquisar motorista',class: 'col-md-4' %>
+  <div class="form-group col-md-4">
+  <%= f.label '.',class: 'col-md-12', style: 'color:transparent', :required => false%>
+  <%= f.button :submit, 'pesquisar motorista',class: 'col-md-12  btn-primary'%>
+  </div>
+<%end%>
+</div>
+<div class="row">
+   <div class="row">
+      <div class="col-md-12" style="padding:20px">
+        <h4 class="decorated"><span>VEICULO</span></h4>
+      </div>
+  </div>
+
+<%= simple_form_for :veiculo, :url => '/comandos/veiculo', :remote =>true do |f|%>
+    <%= f.input :placa, :required => false, wrapper_html: { class: 'col-md-6' } %>
+    <%= f.input "marca/modelo",:input_html =>{ :id => 'veiculo_marca_modelo'}, :required => false,wrapper_html: { class: 'col-md-6' }, :readonly => true %>
+    <%= f.input :renavam, :required => false,wrapper_html: { class: 'col-md-4' }, :readonly => true %>
+    <%= f.input :tara, :required => false,wrapper_html: { class: 'col-md-4' }, :readonly => true %>
+    <div class="form-group col-md-4">
+  <%= f.label '.',class: 'col-md-12', style: 'color:transparent', :required => false%>
+  <%= f.button :submit, 'pesquisar veiculo',class: 'col-md-12  btn-primary'%>
+  </div>
 <%end%>
 
-<%= simple_form_for :veiculo do |f|%>
-    <%= f.input :placa, :required => false, wrapper_html: { class: 'col-md-6' } %>
-    <%= f.input "marca/modelo", :required => false,wrapper_html: { class: 'col-md-6' } %>
-    <%= f.input :renavam, :required => false,wrapper_html: { class: 'col-md-4' } %>
-    <%= f.input :tara, :required => false,wrapper_html: { class: 'col-md-4' } %>
-    <%= f.label 's',class: 'col-md-4', style: 'color:transparent', :required => false%>
-    <%= f.button :submit, 'pesquisar veiculo',class: 'col-md-4' %>
-  <%end%>
 
+</div>
 

@@ -1,20 +1,20 @@
-# default: &default
-#   adapter: oracle_enhanced
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
-
-# development:
-#   <<: *default
-#   database: 
-#   username: 
-#   password: 
-
-#--------------------------------------------------
 default: &default
-  adapter: sqlite3
+  adapter: oracle_enhanced
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: <%= Rails.application.credentials.sitafe[:host] %>
+  username: <%= Rails.application.credentials.sitafe[:username] %>
+  password: <%= Rails.application.credentials.sitafe[:password] %>
+
+#--------------------------------------------------
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   <<: *default
+#   database: db/development.sqlite3

@@ -1,0 +1,5 @@
+<% if @retorno%>
+  //teste
+  $('#motorista_data_de_recepcao').val('<%= @retorno[:data]%>')
+  $('#motorista_status').val('<%= @retorno[:status]%>') 
+<%end%>

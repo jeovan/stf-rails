@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .decorated{
+  overflow: hidden;
+  text-align: left;
+}
+.decorated > span{
+ position: relative;
+ display: inline-block;
+ margin-left:50px;
+ font-size:14px;
+}
+.decorated > span:before, .decorated > span:after{
+ content: '';
+ position: absolute;
+ top: 50%;
+ border-bottom: 1px solid #9e9e9e;
+ width: 5910px; /* half of limiter*/
+ margin: 0 20px;
+}
+.decorated > span:before{
+ right: 100%;
+}
+.decorated > span:after{
+ left: 100%;
+}

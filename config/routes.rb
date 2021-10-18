@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   get 'pessoas/index'
 
+  post '/comandos/motorista', to:'comandos#motorista'
+
+  post '/comandos/veiculo', to: 'comandos#veiculo'
+
 
 
   get 'client/index'
